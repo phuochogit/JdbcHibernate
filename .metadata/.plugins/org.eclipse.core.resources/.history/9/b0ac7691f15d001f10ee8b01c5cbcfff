@@ -1,0 +1,26 @@
+package model;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+public class GiangVien {
+	@Id
+	@GeneratedValue(generator = "prefix-id-generator")//set name for Long id;.
+	@GenericGenerator(name = "prefix-id-generator", strategy = "util.PrefixIdGenerator") //use name of Long id and create prefixIdGenerator.
+	private Long id;
+	private String name;
+	public GiangVien() {
+		super();
+	}
+	public GiangVien(String name) {
+		super();
+		this.name = name;
+	}
+	
+	
+
+}

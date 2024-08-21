@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_quanlysinhvienthuchanhnghenghiep</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property><!-- Use  MySQL8Dialect because use library mysql-connector 8.3.33.-->
+    	<property name="hibernate.hbm2ddl.auto">update</property><!-- hbm2ddl stands for hibernate mapping to data definition language(create table). Update means update database quanlysinhvienthuchanhnghenghiep with create table.-->
+    	<property name="show_sql">true</property><!-- show sql command on console. -->
+    	
+    	<!-- Mapping class SinhVien Java into database MySQL and create table. -->
+    	<mapping class="model.SinhVien"/>
+    	<mapping class="model.GiangVien"/>
+    	<mapping class="model.DoanhNghiep"/>
+    </session-factory>
+</hibernate-configuration>

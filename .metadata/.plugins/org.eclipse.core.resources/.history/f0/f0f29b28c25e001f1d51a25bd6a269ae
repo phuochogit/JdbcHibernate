@@ -1,0 +1,39 @@
+package dao;
+
+import java.util.List;
+
+import model.SinhVien;
+
+public class SinhVienDAO implements DAOInterface<SinhVien> {
+
+	@Override
+	public boolean insert(SinhVien t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(SinhVien t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(SinhVien t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<SinhVien> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SinhVien selectById(SinhVien t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

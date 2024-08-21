@@ -1,0 +1,25 @@
+package test;
+
+
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import dao.CatDAO;
+import model.Cat;
+import util.HibernateUtil;
+
+public class TestCat {
+public static void main(String[] args) {
+	Cat find = new Cat(3);
+	Cat cat = CatDAO.getInstance().selectById(find);
+	System.out.println(cat.toString());
+}
+}

@@ -1,0 +1,34 @@
+package util;
+
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.id.IdentifierGenerator;
+
+import java.io.Serializable;
+
+public class PrefixIdGenerator implements IdentifierGenerator {
+
+    private static final long PREFIX = 202101025L; // Fixed numeric prefix
+
+    @Override
+    public Serializable generate(SharedSessionContractImplementor session, Object object) {
+        // Query to get the maximum ID from the SinhVien table
+        String maxId = (String) session.createQuery("select coalesce(max(id), :prefix) from SinhVien")
+                .setParameter("prefix", PREFIX + "00000000")
+                .uniqueResult();
+
+        if (maxId != null) {
+            try {
+                // Extract the numeric part from the ID and increment it
+                Long currentNumber = Long.parseLong(maxId.substring(String.valueOf(PREFIX).length()));
+                return PREFIX + String.format("%08d", currentNumber + 1);
+            } catch (NumberFormatException e) {
+                // Handle potential parsing issues
+                e.printStackTrace();
+                throw new RuntimeException("Failed to parse the current number from ID: " + maxId, e);
+            }
+        }
+
+        // If no IDs are present, start with the first number
+        return PREFIX + "00000001";
+    }
+}

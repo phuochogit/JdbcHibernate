@@ -1,0 +1,25 @@
+try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			if(sessionFactory!=null)
+			{
+				Session session = sessionFactory.openSession(); 
+				
+				Transaction tr = session.beginTransaction();
+			
+				session.save(t);//If id 1 name Tom, add id 1 name Jerry. Return error.
+				
+//				session.saveOrUpdate(t);//If id 1 name Tom, add id 1 name Jerry. Return id 1 name Jerry.
+				
+				//Conclusion: Now should use session.save() to avoid fix the records, turn out wrong data.
+				
+				tr.commit();
+				
+				session.close();
+				
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;

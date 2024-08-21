@@ -1,0 +1,15 @@
+package model;
+
+public class DoanhNghiep {
+	private Long id;
+	private String name;
+	public DoanhNghiep() {
+		super();
+	}
+	public DoanhNghiep(String name) {
+		super();
+		this.name = name;
+	}
+	
+
+}

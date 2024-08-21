@@ -1,0 +1,18 @@
+package test;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import model.SinhVien;
+import util.HibernateUtil;
+
+public class TestSinhVien {
+public static void main(String[] args) {
+	//Test insert.
+	new Sinh
+	
+}
+}

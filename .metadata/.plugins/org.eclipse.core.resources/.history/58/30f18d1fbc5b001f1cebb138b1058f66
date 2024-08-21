@@ -1,0 +1,33 @@
+package test;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import model.SinhVien;
+import util.HibernateUtil;
+
+public class TestSinhVien {
+public static void main(String[] args) {
+	try {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();//Run session factory.
+		if(sessionFactory!=null)
+		{
+			Session session = sessionFactory.openSession();//After run session factory then run session. Session is the api to connect between Java and MySQL.
+			try {
+				Transaction tr= session.beginTransaction();//Transaction is push the data from Java to MySQL.For example: Java Cat.class {id = 1, name = Tom} -> MySQL Cat table id = 1, name = "Tom".
+				SinhVien sinhvien = new SinhVien("2021010259","Pham Thi Huyen Mi");
+				session.save(sinhvien);
+				tr.commit();//Commit for transaction push data from Java to MySQL. In database operations, a transaction represents a series of operations that should be treated as a single unit of work. When you call tr.commit(), you are signaling that all the operations performed in the transaction should be finalized and saved to the database.
+			} finally {
+				// TODO: handle finally clause
+			}
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
+}
+}

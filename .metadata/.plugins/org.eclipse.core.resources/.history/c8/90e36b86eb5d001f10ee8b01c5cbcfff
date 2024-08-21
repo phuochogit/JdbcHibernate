@@ -1,0 +1,27 @@
+package util;
+
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.id.IdentifierGenerator;
+
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class PrefixIdGenerator implements IdentifierGenerator {
+
+    private static final String PREFIX = "202101025"; // The fixed prefix
+
+    @Override
+    public Serializable generate(SharedSessionContractImplementor session, Object object) {
+        // Get the current highest ID from the database
+        String maxId = (String) session.createQuery("select coalesce(max(id), '0') from SinhVien").uniqueResult();
+        if (maxId != null) {
+            // Extract the numeric part of the current highest ID
+            Long currentNumber = Long.parseLong(maxId.substring(PREFIX.length()));
+            // Increment and return the new ID
+            return PREFIX + String.format("%08d", currentNumber + 1);
+        }
+        // If no IDs are present, return the first ID
+        return PREFIX + "00000001";
+    }
+}

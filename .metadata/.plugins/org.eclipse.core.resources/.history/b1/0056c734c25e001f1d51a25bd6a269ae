@@ -1,0 +1,67 @@
+package dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import model.SinhVien;
+import util.HibernateUtil;
+
+public class SinhVienDAO implements DAOInterface<SinhVien> {
+
+	@Override
+	public boolean insert(SinhVien t) {
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			if(sessionFactory!=null)
+			{
+				Session session = sessionFactory.openSession(); 
+				
+				Transaction tr = session.beginTransaction();
+			
+				session.save(t);//If id 1 name Tom, add id 1 name Jerry. Return error.
+				
+//				session.saveOrUpdate(t);//If id 1 name Tom, add id 1 name Jerry. Return id 1 name Jerry.
+				
+				//Conclusion: Now should use session.save() to avoid fix the records, turn out wrong data.
+				
+				tr.commit();
+				
+				session.close();
+				
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+
+	@Override
+	public boolean update(SinhVien t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(SinhVien t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<SinhVien> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SinhVien selectById(SinhVien t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
