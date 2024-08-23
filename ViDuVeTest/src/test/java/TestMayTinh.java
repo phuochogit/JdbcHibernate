@@ -13,6 +13,9 @@ class TestMayTinh {
 	
 	@Test
 	void testphepTru() {
+		/**
+		 * aaaaaaaaa
+		 */
 		assertEquals(15, MayTinh.tru(20, 5),0.01);
 	}
 

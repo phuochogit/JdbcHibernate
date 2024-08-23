@@ -6,19 +6,40 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="DoanhNghiep"/>
+		<item key="selection" value="Integer id"/>
 		<list key="findhistory">
-			<item value="giangvien"/>
+			<item value="String id"/>
+			<item value="Integer name"/>
+			<item value="University"/>
+			<item value="Students"/>
+			<item value="LecturerDetails"/>
+			<item value="Lecturers"/>
+			<item value="Student"/>
+			<item value="StudentDetails"/>
+			<item value="java doc"/>
+			<item value="Integer studentDetails"/>
+			<item value="Integer mobile"/>
+			<item value="Integer"/>
+			<item value="SinhVien"/>
+			<item value="DoanhNghiep"/>
 			<item value="GiangVien"/>
-			<item value="PrefixIdGenerator"/>
-			<item value="quanlythuchanhnghenghiep"/>
-			<item value="Sach"/>
 		</list>
 		<list key="replacehistory">
-			<item value="doanhnghiep"/>
-			<item value="DoanhNghiep"/>
-			<item value="PrefixIdGeneratorSinhVien"/>
-			<item value="User"/>
+			<item value="Integer id"/>
+			<item value="String name"/>
+			<item value="Person"/>
+			<item value="University"/>
+			<item value="EnterpriseDetails"/>
+			<item value="Enterprises"/>
+			<item value="Lecturer"/>
+			<item value="LecturerDetails"/>
+			<item value="StudentDetails studentDetails"/>
+			<item value="StudentDetails"/>
+			<item value="String mobile"/>
+			<item value="Lecturers"/>
+			<item value="Students"/>
+			<item value="2021010258"/>
+			<item value="Integer"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

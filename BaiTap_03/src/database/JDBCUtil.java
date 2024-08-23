@@ -9,6 +9,9 @@ import com.mysql.cj.jdbc.DatabaseMetaData;
 public class JDBCUtil {
 	public static Connection getConnection()//static because JDBCUtil.getConnection() instead of non static JDBCUtil j = new JDBC(); j.getConnection().
 	{
+		/**
+		 * aaa
+		 */
 		Connection c = null;
 			//Cac thong so.
 			String url = "jdbc:mySQL://localhost:3306/ontap";
