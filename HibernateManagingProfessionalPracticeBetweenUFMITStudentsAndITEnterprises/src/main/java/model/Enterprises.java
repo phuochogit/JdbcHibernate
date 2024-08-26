@@ -15,7 +15,7 @@ public class Enterprises {
 	@Id
 	@GeneratedValue(generator = "prefix-id-generator-enterprises")//auto increment.
 	@GenericGenerator(name = "prefix-id-generator-enterprises",strategy = "util.PrefixIdGeneratorEnterprises")//custom auto increment.
-	private Integer id;
+	private String id;
 	
 	private String name;
 	
@@ -26,24 +26,19 @@ public class Enterprises {
 	public Enterprises() {
 		super();
 	}
-	
-	public Enterprises(Integer id) {
-		super();
-		this.id = id;
-	}
 
 	public Enterprises(String name) {
 		super();
 		this.name = name;
 	}
 	
-	public Enterprises(Integer id, String name) {
+	public Enterprises(String id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 	
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 	
@@ -57,8 +52,10 @@ public class Enterprises {
 
 	@Override
 	public String toString() {
-		return "DoanhNghiep [id=" + id + ", name=" + name + "]";
+		return "Enterprises [id=" + id + ", name=" + name + ", enterpriseDetails=" + enterpriseDetails + "]";
 	}
+
+	
 	
 
 }

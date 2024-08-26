@@ -2,6 +2,7 @@ package model;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -12,7 +13,8 @@ public class StudentDetails {
 	@Id
 	@GeneratedValue(generator = "prefix-id-generator-studentdetails")
 	@GenericGenerator(name = "prefix-id-generator-studentdetails", strategy = "util.PrefixIdGeneratorStudentDetails") //custom auto-increment.
-	private Integer id;
+	@Column(length = 10)
+	private String id;
 	
 	private String ethnicity;
 	
@@ -52,7 +54,7 @@ public class StudentDetails {
 
 
 
-	public StudentDetails(Integer id, String ethnicity, String religion, String country, String province,
+	public StudentDetails(String id, String ethnicity, String religion, String country, String province,
 			String districts, String mobile, String personalEmail, String schoolEmail, boolean sex) {
 		super();
 		this.id = id;
@@ -67,11 +69,11 @@ public class StudentDetails {
 		this.sex = sex;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

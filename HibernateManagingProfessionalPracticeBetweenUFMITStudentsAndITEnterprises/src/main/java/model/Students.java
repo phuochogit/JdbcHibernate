@@ -6,6 +6,7 @@ import org.hibernate.id.IdentifierGenerator;
 import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Type;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +19,8 @@ public class Students {
 	@Id
 	@GeneratedValue (generator = "prefix-id-generator-students")// generator: The name of the primary key generator to use as specified in the SequenceGenerator or TableGenerator annotation. 
 	@GenericGenerator(name = "prefix-id-generator-students",strategy = "util.PrefixIdGeneratorStudents")// Name: The name of the identifier generator. This is the name that may be specified by the generator member of the @GeneratedValue annotation, for example:generator = "prefix-id-generator". Strategy: specifies the strategy or class name for generating identifiers, for example class PrefixIdGenerator implements IdentifierGenerator.
-	private Integer id;
+	@Column(length = 10)
+	private String id;
 	
 	private String name;
 	
@@ -29,18 +31,13 @@ public class Students {
 	public Students() {
 		super();
 	}
-	
-	public Students(Integer id) {
-		super();
-		this.id = id;
-	}
 
 	public Students(String name) {
 		super();
 		this.name = name;
 	}
 
-	public Students(Integer id, String name) {
+	public Students(String id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -53,18 +50,18 @@ public class Students {
 		this.studentDetails = studentDetails;
 	}
 
-	public Students(Integer id, String name, StudentDetails studentDetails) {
+	public Students(String id, String name, StudentDetails studentDetails) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.studentDetails = studentDetails;
 	}
 	
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

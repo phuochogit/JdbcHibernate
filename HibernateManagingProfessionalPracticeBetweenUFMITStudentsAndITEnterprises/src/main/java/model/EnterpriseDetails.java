@@ -13,7 +13,8 @@ public class EnterpriseDetails {
 	@Id
 	@GeneratedValue(generator = "prefix-id-generator-enterprisedetails")
 	@GenericGenerator(name = "prefix-id-generator-enterprisedetails", strategy = "util.PrefixIdGeneratorEnterpriseDetails") 
-	private Integer id;
+	@Column(length = 10)
+	private String id;
 	
 	private String mobile;
 	
@@ -46,7 +47,7 @@ public class EnterpriseDetails {
 
 
 
-	public EnterpriseDetails(Integer id, String mobile, String email, String jd, String address, String description,
+	public EnterpriseDetails(String id, String mobile, String email, String jd, String address, String description,
 			String avatar) {
 		super();
 		this.id = id;
@@ -58,11 +59,11 @@ public class EnterpriseDetails {
 		this.avatar = avatar;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

@@ -17,8 +17,8 @@ import util.HibernateUtil;
 public class TestEnterprises {
 public static void main(String[] args) {
 //	Test insert.
-	Enterprises Enterprises = new Enterprises("DotB");
-	EnterprisesDAO.getInstance().insert(Enterprises);
+//	Enterprises Enterprises = new Enterprises("DotB");
+//	EnterprisesDAO.getInstance().insert(Enterprises);
 //	Test update.
 //	Enterprises Enterprises = new Enterprises(2021010258, "DOTB");//Long id so 2021010258 understand as Integer id so 2021010258 to understand as Long id.
 //	EnterprisesDAO.getInstance().update(Enterprises);

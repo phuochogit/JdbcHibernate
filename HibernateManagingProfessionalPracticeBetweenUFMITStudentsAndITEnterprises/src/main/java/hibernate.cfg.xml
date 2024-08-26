@@ -12,8 +12,6 @@
     	<property name="show_sql">true</property><!-- show sql command on console. -->
     	
     	<!-- Mapping class SinhVien Java into database MySQL and create table. -->
-    	<mapping class="model.University"/>
-    	<mapping class="model.Person"/>
     	<mapping class="model.Students"/>
     	<mapping class="model.StudentDetails"/>
     	<mapping class="model.Lecturers"/>
